@@ -8,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+      - name: Install gpg secret key
+        run: |
+          echo "${{ secrets.MAVEN_GPG_SECRET_KEY }}" | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
