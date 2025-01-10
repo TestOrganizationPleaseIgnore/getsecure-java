@@ -6,7 +6,7 @@
 
     <groupId>com.minbash</groupId>
     <artifactId>getsecure</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>GetSecure</name>
@@ -110,6 +110,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
                 </configuration>
             </plugin>
             <plugin>
