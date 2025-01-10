@@ -49,4 +49,27 @@ java -jar target/getsecure-1.0-SNAPSHOT-jar-with-dependencies.jar -s mysecret123
 
 ### As a Library
 
-[Library usage instructions would go here...]
+To use GetSecure as a library in your Java project, first add it as a dependency in your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>com.minbash</groupId>
+    <artifactId>getsecure</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+Then use it in your code:
+
+```java
+import com.minbash.getsecure.SecureLink;
+
+public class Main {
+    public static void main(String[] args) {
+        String secret = "mysecret123";
+        String url = "https://example.com/resource";
+        String secureUrl = SecureLink.generate(secret, url);
+        System.out.println(secureUrl);
+    }
+}
+```
